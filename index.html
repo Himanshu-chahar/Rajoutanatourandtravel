@@ -34,7 +34,50 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
+        .Slider {
+            position: center;
+            scroll-behavior: auto;
+        }
 
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .Blogs {
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0; /* Ensure no additional padding */
+        margin-right: 0; /* Remove margin */
+    }
+
+    #blog {
+        display: flex;
+        gap: 10px; /* Adjust the gap between items */
+    }
+
+    .Blogs img {
+        height: 188px;
+        object-fit: cover;
+        border-radius: 2%;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+        #blog {
+            flex-direction: column;
+            gap: 10px; /* Increase gap for smaller screens */
+        }
+    }
     </style>
 
 
@@ -57,20 +100,24 @@
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Agra, India</small>
                     <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>8650070072</small>
-                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>rajputanaglobaltravels@gmail.com</small>
+                    <small class="text-light"><i
+                            class="fa fa-envelope-open me-2"></i>rajputanaglobaltravels@gmail.com</small>
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
                             class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/oBTqpbD9V8hkz9KB/?mibextid=qi2Omg"><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.facebook.com/share/oBTqpbD9V8hkz9KB/?mibextid=qi2Omg"><i
                             class="fab fa-facebook-f fw-normal"></i></a>
                     <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i
                             class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/rajputana_globaltravels?utm_source=qr&igsh=MXFwMm56YW44cGxp"><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                        href="https://www.instagram.com/rajputana_globaltravels?utm_source=qr&igsh=MXFwMm56YW44cGxp"><i
                             class="fab fa-instagram fw-normal"></i></a>
-                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://youtube.com/@rajputanaglobaltravels?si=vllWlQvT_7mHZtqp"><i
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle"
+                        href="https://youtube.com/@rajputanaglobaltravels?si=vllWlQvT_7mHZtqp"><i
                             class="fab fa-youtube fw-normal"></i></a>
                 </div>
             </div>
@@ -143,7 +190,7 @@
                 <div style="text-align: center;">
                     <h4 class="section-title bg-white text-center text-primary px-3" data-wow-delay="0.3s">About Us</h4>
                 </div>
-                
+
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
                         <img class="img-fluid position-absolute w-100 h-100" src="img/About1.jpg" alt=""
@@ -151,7 +198,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                    
+
                     <h1 class="mb-4">Welcome to <span class="text-primary">Rajputana Global Travels!</span></h1>
                     <p class="mb-4">At Rajputana Global Travels, we believe that every journey should be an adventure of
                         discovery and wonder. Founded by a passionate team of explorers, our mission is to transform
@@ -304,7 +351,7 @@
             </div>
         </div>
     </div>
-    <!-- Destination Start -->
+    <!-- Destination End -->
 
 
     <!-- Package Start -->
@@ -489,7 +536,7 @@
             </div>
         </div>
     </div>
-    <!-- Booking Start -->
+    <!-- Booking End -->
 
 
     <!-- Process Start -->
@@ -542,7 +589,7 @@
             </div>
         </div>
     </div>
-    <!-- Process Start -->
+    <!-- Process End -->
 
     <!-- Blog Start -->
     <div class="container-xxl py-5">
@@ -551,23 +598,60 @@
                 <h6 class="section-title bg-white text-center text-primary px-3"></h6>
                 <h1 class="mb-5">Blog</h1>
             </div>
-            <marquee>
-                <div class="row">
 
-                    <div class="col-sm-4 mb-3">
-                        <img src="img/bg-hero.jpg" width="300px" height="200px">
+            <marquee direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                <div class="d-flex align-items-center" id="blog">
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/boy-anime-artwork-u2-1366x768.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
                     </div>
-                    <div class="col-sm-4 mb-3">
-                        <img src="img/bg-hero.jpg" width="300px" height="200px">
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/pexels-roberto-nickson-2478248.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
                     </div>
-                    <div class="col-sm-4 mb-3">
-                        <img src="img/bg-hero.jpg" width="300px" height="200px">
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/pexels-robert-so-14075301.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
                     </div>
-                    <div class="col-sm-4 mb-3">
-                        <img src="img/bg-hero.jpg" width="300px" height="200px">
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/pexels-simon-berger-1323550.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
+                    </div>
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/team-1.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
+                    </div>
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/pexels-robert-so-14075301.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
+                    </div>
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/pexels-simon-berger-1323550.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
+                    </div>
+                    <div class="Blogs col-sm-3 mb-3">
+                        <a href="">
+                            <img src="img/team-1.jpg" width="100%" alt=""><br>
+                            <strong>Name</strong>
+                        </a>
                     </div>
                 </div>
             </marquee>
+
         </div>
     </div>
     <!-- Blog End -->
@@ -707,9 +791,15 @@
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>rajputanaglobaltravels@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/share/oBTqpbD9V8hkz9KB/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://youtube.com/@rajputanaglobaltravels?si=vllWlQvT_7mHZtqp"><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/rajputana_globaltravels?utm_source=qr&igsh=MXFwMm56YW44cGxp"><i class="fab fa-instagram fw-normal"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.facebook.com/share/oBTqpbD9V8hkz9KB/?mibextid=qi2Omg"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://youtube.com/@rajputanaglobaltravels?si=vllWlQvT_7mHZtqp"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social"
+                            href="https://www.instagram.com/rajputana_globaltravels?utm_source=qr&igsh=MXFwMm56YW44cGxp"><i
+                                class="fab fa-instagram fw-normal"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
